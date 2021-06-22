@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: Aladin;
+	src: url(../fonts/Aladin-Regular.woff);
+  }
+
+@font-face {
+	font-family: Poppins;
+	src: url(../fonts/Poppins-Medium.woff);
+}
+
+
+body{
+	    font-family: 'Poppins', sans-serif;
+		font-size:small;
+}
+
+.form-group{
+	margin-bottom: 0;
+}
+
+.card-body{
+	padding: 0px;
+	margin: 5px;
+}
+.taskTitle{
+	padding-left: 5px;
+}
+
+.counter-circle{
+	font-size: 60px;
+	display: inline;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	padding-left: 57px;
+	padding-right: 57px;
+	border:5px solid black; 
+	border-radius: 20vh;
+	clear: none;
+}
+
+.signup-wrapper{
+	width: 50%;
+    padding: 50px;
+    margin: 20% auto;
+    text-align: left;
+  
+}
+.counter-wrapper{
+	width: 50%;
+    padding: 20px;
+    margin: 20% auto;
+    text-align: center;
+}
+
+.profileCard {
+	min-width: 500px;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+  }
+  @media (max-width: 500px) {
+	.profileCard {
+	  min-width: 90%;
+	}
+  }

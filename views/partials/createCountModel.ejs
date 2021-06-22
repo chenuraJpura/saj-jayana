@@ -1,0 +1,29 @@
+<!--create count model-->
+
+<div class="modal fade" id="countSaveBtn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header px-4 py-3">
+          <p class="modal-title" id="exampleModalLabel1">Save Count</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body p-2">
+          <form method="POST" action="counter/create">
+            <div class="form-group p-2">
+              <input type="text" value="" id="countText" name="count" class="form-control d-none" >
+              <input type="text" value="<%-user._id%>" name="ob_id" class="form-control d-none" >
+              <input type="text" name="title" class="form-control" placeholder="Enter Title:">
+            </div>
+            <div class="form-group px-2">
+              <button type="submit" class="btn btn-sm btn-dark float-right ">Save</button>
+              <button type="button" class="btn btn-sm btn-secondary float-right mr-1" data-dismiss="modal">close</button>
+            </div>
+      
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

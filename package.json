@@ -1,0 +1,38 @@
+{
+  "name": "Saj_Jayana",
+  "version": "1.0.0",
+  "description": "simple todo list",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.4",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-csp-header": "^5.0.0",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.15.6",
+    "express-validation": "^3.0.8",
+    "helmet": "^4.6.0",
+    "http-status": "^1.5.0",
+    "jquery": "^3.6.0",
+    "mongoose": "^5.12.14",
+    "nodemailer": "^6.6.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sendgrid": "^5.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

@@ -1,0 +1,73 @@
+<%- include('./partials/authNavbar'); -%>
+
+  <div class="row">
+      <div class="content-wrapper mt-1">
+
+        <form method="POST" action="/users/profile" autocomplete="on">
+          <%- include('partials/messages'); %> 
+          <h4 class="d-inline text-left mt-2">Profile</h4>
+          <div class="form-group mt-2">
+              <input type="text"
+               name="user_id" 
+               value="<%- user._id %>"
+               class="d-none"
+                />
+                <input type="text"
+                name="user_old_email" 
+                value="<%- user.email %>"
+                class="d-none"
+                 />
+              <label class="float-left" for="user_email">Email</label>
+              <input type="text" 
+                  class="form-control"
+                  id="user_email"
+                  value="<%- user.email %>" 
+                  placeholder="Edit Email *" 
+                  name="user_email" />
+          </div>
+          <div class="form-group mt-2">
+              <label class="float-left" for="user_name"></label>
+              <input type="text"
+                  class="form-control"
+                  id="user_name"
+                  value="<%- user.name %>" 
+                  placeholder="Edit Name *" 
+                  name="user_name" />
+          </div>
+          <div class="form-group mt-4 button-wrapper-right">
+              <button type="submit" class="btn btn-dark px-5">Save</button>
+          </div>
+      </form>
+      <form method="POST" action="/users/password" class="mt-2" autocomplete="on">
+        <h4 class="d-inline text-left mt-3">Password</h4>
+
+        <div class="form-group mt-4">
+          <input class="d-none" 
+          type="password" 
+          value="<%-user._id%>" 
+          name="user_id"/>
+          <label class="float-left"
+           for="oldpassword">Old Password</label>
+          <input type="password"
+           class="form-control"
+            name="old_pass"/>
+      </div>
+    
+
+        <div class="form-group mt-2">
+          <label class="float-left" for="newpassword">New Password</label>
+          <input type="password" 
+          class="form-control"
+           id="newpassword" 
+           name="new_pass" />
+      </div>
+        <div class="form-group mt-4 button-wrapper-right">
+            <button type="submit" class="btn btn-dark px-5">Update</button>
+        </div>
+        
+    </form>
+      </div>      
+            
+
+  </div>
+
