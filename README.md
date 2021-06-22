@@ -1,6 +1,8 @@
-# Saj Jayana Web Application
+# SAJ JAYANA
+**Saj-Jayana** is simple counter & to-do application developed for Buddhist monks to note down the they day to day tasks and evaluate their good works.
 
-This is a simple counter & todo app using Node.js, Express, Passport, Mongoose, EJS and some other packages.
+![enter image description here](https://i.ibb.co/KX4LVC5/saj-jayana-UI.png)
+
 
 ### Version: 1.0.0
 
@@ -15,9 +17,9 @@ $ npm start
 # Or run with Nodemon
 $ npm run dev
 
-# Visit http://localhost:5000
+# Visit http://localhost:3040
 ```
 
 ### MongoDB
 
-Open "config/keys.js" and add your MongoDB URI, local or Atlas
+create "config.env" and add your MongoDB URI,PORT,SendGrid API KEY
