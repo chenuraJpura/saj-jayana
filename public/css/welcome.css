@@ -1,0 +1,109 @@
+.pulse1 {
+    z-index: 1;
+  
+    -webkit-animation: pulsejg1 0.05s linear;
+    -moz-animation: pulsejg1 0.05s linear;
+    animation: pulsejg1 0.05s linear;
+
+  
+}
+
+
+@-webkit-keyframes pulsejg1 {
+
+    0% {
+        -webkit-transform: scale(0.8);
+        opacity: 0.9;
+    }
+
+    50% {
+        -webkit-transform: scale(0.6);
+        opacity: 0.8;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+
+
+
+}
+
+@-moz-keyframes pulsejg1 {
+    
+
+    0% {
+        -webkit-transform: scale(0.8);
+        opacity: 0.9;
+    }
+
+    50% {
+        -webkit-transform: scale(0.6);
+        opacity: 0.8;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes pulsejg1 {
+
+
+    0% {
+        -webkit-transform: scale(0.8);
+        opacity: 0.9;
+    }
+
+    50% {
+        -webkit-transform: scale(0.6);
+        opacity: 0.8;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/*
+pop up model change css
+*/
+
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle{
+    -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    }
+
+.main-button{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width:18vh;
+    height: 20vh;
+    -webkit-box-shadow: -1px 0px 15px 9px rgba(0,0,0,0.1); 
+    box-shadow: -1px 0px 15px 9px rgba(0,0,0,0.1);
+    border:5px solid black; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    color: #000000;
+    border-radius: 38vh;
+    
+}

@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" href="/home" style="font-family:'Aladin', cursive;font-size: x-large;">
+    Saj Jayana
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+    <img src="/img/list-ul.svg" alt="edit" width="20" height="20">
+  </button>
+  <div class="collapse navbar-collapse" id="navbarScroll">
+    <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/counter">counter</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/profile" tabindex="-1" aria-disabled="true">profile</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><%- user.name %> </a>
+      </li>
+      <li class="dropdown" style="font-size:small;">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+            Settings
+          </a>
+          <div class="dropdown-menu">
+              <a class="dropdown-item" style="font-size:small;" href="/profile">Profile</a>
+              <a class="dropdown-item" style="font-size:small;" href="/users/Logout">Logout</a>
+          </div>
+      </li>
+  </ul>
+
+  </div>
+</nav>

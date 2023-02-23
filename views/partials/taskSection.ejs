@@ -1,0 +1,107 @@
+<script type="text/javascript" src="/js/updateTask.js"></script>
+<script type="text/javascript" src="/js/deleteTask.js"></script>
+<script type="text/javascript" src="/js/deleteCount.js"></script>
+        <div class="card mt-5  mb-4" >
+        <%- include('messages') %> 
+          <div class="card-header">Add New Good Task </div><div class="card-body">					
+        <div class="card">
+        <form class="d-flex" action="/task/create" method="POST">    
+        <input type="text" class="form-control" placeholder="Enter good work" required name="title"/>
+        <input type="text" class="d-none" name="state" value="todo"/>
+        <input type="number" class="d-none" name="point" value="4"/>
+        <input type="text" class="d-none" name="ob_id" value="<%= user._id %>" />
+        <button type="submit" class="btn btn-dark px-2">Add</button>
+        </form>    
+        </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-sm-12 col-xs-12">
+            <div class="row mb-4">
+              <% taskList.forEach(function(task) {  %>
+              <div class="col-sm-6">
+                <div class="card p-2">
+                  <div class="card-body">
+                    <p class="card-text" id="<%- task._id %>t"><%-task.title%></p>
+                    <form class="d-inline" action="/task/state" method="POST">
+                      <input class="btn btn-sm btn-warning d-none" name="task_id" value="<%-task._id %>"/>      
+                      <%if (task.state=="todo") { %>
+                            <input type="text" class="d-none" value="<%-task.state %>" name="state"/>
+                            <button type="submit" class="btn btn-sm btn-danger">todo</button>
+                      <% } %>
+                      <%if (task.state=="done") { %>
+                        <input type="text" class="d-none" value="<%-task.state%>" name="state"/>
+                        <button type="submit" class="btn btn-sm btn-warning">done</button>
+                  <% } %>
+                    
+                    </form>  
+                    <button data-toggle="modal"
+                            data-target="#updateTask" 
+                            onclick="updateTaskButtonClick(this.id);" 
+                            class="btn btn-sm btn-dark" 
+                            id="<%-task._id%>-u">
+                            <img src="/img/pencil-square.svg" alt="edit" width="15" height="15">
+                    </button>
+                    
+                    <button data-target="#deleteTask"
+                                  data-toggle="modal" 
+            onclick="deleteTaskButtonClick(this.id);" 
+                          class="btn btn-sm btn-dark"
+                                id="<%-task._id%>-d">
+                      <img src="/img/trash.svg" alt="delete" width="15" height="15">
+                    </button>
+                    
+                    <div class="card-text float-right mt-1 text-muted">
+                      <%# destructer the date %>
+                      <%-JSON.stringify(task.createdAt).split('-')[0].slice(1,5)%>:
+                      <%-JSON.stringify(task.createdAt).split('-')[1]%>:
+                      <%-JSON.stringify(task.createdAt).split('-')[2].slice(0,2)%>
+                      </div>  
+                   
+                  </div>
+                </div>
+              </div>
+              <% }); %> 
+            </div>
+    
+          </div>
+          <div class="col-md-4 col-sm-12 col-xs-12 mb-5">
+            <ol class="list-group list-group-numbered">
+
+              <% countList.forEach(function(countObj) {  %>
+
+                <li class="list-group-item d-flex justify-content-between align-items-start p-2">
+                  
+                  <div class="ms-2 me-auto ml-2">
+                    <div class="fw-bold "><%-countObj.title%> </div>
+                    <div class="text-muted" style="font-size: 0.7rem;">
+                      <%# destructer the date %>
+                      <%-JSON.stringify(countObj.createdAt).split('-')[0].slice(1,5)%>:
+                      <%-JSON.stringify(countObj.createdAt).split('-')[1]%>:
+                      <%-JSON.stringify(countObj.createdAt).split('-')[2].slice(0,2)%>
+                      </div>  
+                  </div>
+
+                  <div class="bg-dark btn-sm text-white p-2">
+                    <span class="bg-dark  btn-sm text-white p-1"><%-countObj.count%></span>
+                    <div      id="<%-countObj._id%>-d"
+                     data-target="#deleteCount"
+                                data-toggle="modal" 
+                              class="btn d-inline p-1 bg-danger btn-sm text-white"
+                             onclick="deleteCountButtonClick(this.id);">
+                      <img class="mb-1" src="/img/trash.svg" alt="delete" width="15" height="15">
+                    </div>
+                    </div>
+
+                </li>
+  
+                <% }); %> 
+
+            </ol>
+          </div>
+        </div>
+ 
+
+<%- include('taskUpdateModel') %> 
+<%- include('taskDeleteModel') %>
+<%- include('countDeleteModel') %> 

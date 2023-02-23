@@ -1,0 +1,29 @@
+<!--update task model-->
+
+<div class="modal fade" id="updateTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title" id="exampleModalLabel">Update</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="task/update">
+            <div class="form-group">
+              
+              <input type="text" name="task_id" class="form-control d-none" id="taskUpdateID">
+              <input type="text" name="task_title" class="form-control" id="taskUpdateTitle">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-sm btn-dark float-right m-1">save</button>
+              <button type="button" class="btn btn-sm btn-secondary float-right m-1" data-dismiss="modal">close</button>
+            </div>
+      
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

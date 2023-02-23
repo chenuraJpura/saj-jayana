@@ -1,0 +1,28 @@
+.content-wrapper {
+    width: fit-content;
+    padding: 50px;
+    margin: 20% auto;
+    text-align: center;
+  }
+
+  .button-wrapper {
+  
+    padding: 5px;
+    margin: auto;
+    margin-top: 40%;
+    text-align: center;
+  }
+
+  .button-wrapper-right{
+    text-align: right;
+  }
+  
+
+  
+  .counter {
+      font-size: 40px;
+      color: blue;
+  }
+  
+  
+  
