@@ -4,7 +4,7 @@ const { ensureAuthenticated, forwardAuthenticated } = require('../controllers/au
 const countController=require('../controllers/countController');
 
 //counter page display for users
-router.get('/', ensureAuthenticated,(req,res)=> {
+router.get('/userCount', ensureAuthenticated,(req,res)=> {
     res.render('counter', {user:req.user});
 });
 
@@ -13,6 +13,5 @@ router.post('/create',ensureAuthenticated,countController.create);
 
 // delete counter
 router.post('/delete',ensureAuthenticated,countController.delete);
-
 
 module.exports=router;

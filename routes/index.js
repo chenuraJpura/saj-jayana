@@ -7,6 +7,9 @@ const taskController=require('../controllers/taskController');
 // Welcome Page
 router.get('/',forwardAuthenticated, (req, res) => res.render('welcome'));
 
+//Public Counter 
+router.get('/counter',forwardAuthenticated,(req,res)=>res.render('publiccounter'));
+
 // Login Page
 router.get('/login',forwardAuthenticated, (req, res) => res.render('login'));
 
