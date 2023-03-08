@@ -68,3 +68,8 @@ body{
 	  min-width: 90%;
 	}
   }
+
+  .masthead {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+  }
