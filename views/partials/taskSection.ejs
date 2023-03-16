@@ -17,55 +17,63 @@
         </div>
         <div class="row">
           <div class="col-md-8 col-sm-12 col-xs-12">
-            <div class="row mb-4">
-              <% taskList.forEach(function(task) {  %>
-              <div class="col-sm-6">
-                <div class="card p-2">
-                  <div class="card-body">
-                    <p class="card-text" id="<%- task._id %>t"><%-task.title%></p>
-                    <form class="d-inline" action="/task/state" method="POST">
-                      <input class="btn btn-sm btn-warning d-none" name="task_id" value="<%-task._id %>"/>      
-                      <%if (task.state=="todo") { %>
-                            <input type="text" class="d-none" value="<%-task.state %>" name="state"/>
-                            <button type="submit" class="btn btn-sm btn-danger">todo</button>
-                      <% } %>
-                      <%if (task.state=="done") { %>
-                        <input type="text" class="d-none" value="<%-task.state%>" name="state"/>
-                        <button type="submit" class="btn btn-sm btn-warning">done</button>
-                  <% } %>
-                    
-                    </form>  
-                    <button data-toggle="modal"
-                            data-target="#updateTask" 
-                            onclick="updateTaskButtonClick(this.id);" 
-                            class="btn btn-sm btn-dark" 
-                            id="<%-task._id%>-u">
-                            <img src="/img/pencil-square.svg" alt="edit" width="15" height="15">
-                    </button>
-                    
-                    <button data-target="#deleteTask"
-                                  data-toggle="modal" 
-            onclick="deleteTaskButtonClick(this.id);" 
-                          class="btn btn-sm btn-dark"
-                                id="<%-task._id%>-d">
-                      <img src="/img/trash.svg" alt="delete" width="15" height="15">
-                    </button>
-                    
-                    <div class="card-text float-right mt-1 text-muted">
-                      <%# destructer the date %>
-                      <%-JSON.stringify(task.createdAt).split('-')[0].slice(1,5)%>:
-                      <%-JSON.stringify(task.createdAt).split('-')[1]%>:
-                      <%-JSON.stringify(task.createdAt).split('-')[2].slice(0,2)%>
-                      </div>  
-                   
+            <div class="card" >
+              <div class="card-header">View Task </div><div class="card-body">		  
+              <div class="row">
+                <% taskList.forEach(function(task) {  %>
+                <div class="col-sm-6">
+                  <div class="card p-2">
+                    <div class="card-body">
+                      <p class="card-text" id="<%- task._id %>t"><%-task.title%></p>
+                      <form class="d-inline" action="/task/state" method="POST">
+                        <input class="btn btn-sm btn-warning d-none" name="task_id" value="<%-task._id %>"/>      
+                        <%if (task.state=="todo") { %>
+                              <input type="text" class="d-none" value="<%-task.state %>" name="state"/>
+                              <button type="submit" class="btn btn-sm btn-danger">todo</button>
+                        <% } %>
+                        <%if (task.state=="done") { %>
+                          <input type="text" class="d-none" value="<%-task.state%>" name="state"/>
+                          <button type="submit" class="btn btn-sm btn-warning">done</button>
+                    <% } %>
+                      
+                      </form>  
+                      <button data-toggle="modal"
+                              data-target="#updateTask" 
+                              onclick="updateTaskButtonClick(this.id);" 
+                              class="btn btn-sm btn-dark" 
+                              id="<%-task._id%>-u">
+                              <img src="/img/pencil-square.svg" alt="edit" width="15" height="15">
+                      </button>
+                      
+                      <button data-target="#deleteTask"
+                                    data-toggle="modal" 
+              onclick="deleteTaskButtonClick(this.id);" 
+                            class="btn btn-sm btn-dark"
+                                  id="<%-task._id%>-d">
+                        <img src="/img/trash.svg" alt="delete" width="15" height="15">
+                      </button>
+                      
+                      <div class="card-text float-right mt-1 text-muted">
+                        <%# destructer the date %>
+                        <%-JSON.stringify(task.createdAt).split('-')[0].slice(1,5)%>:
+                        <%-JSON.stringify(task.createdAt).split('-')[1]%>:
+                        <%-JSON.stringify(task.createdAt).split('-')[2].slice(0,2)%>
+                        </div>  
+                     
+                    </div>
                   </div>
                 </div>
+                <% }); %> 
               </div>
-              <% }); %> 
             </div>
+
+            </div>
+            
     
           </div>
           <div class="col-md-4 col-sm-12 col-xs-12 mb-5">
+            <div class="card" >
+              <div class="card-header">View Counts </div><div class="card-body">		
             <ol class="list-group list-group-numbered">
 
               <% countList.forEach(function(countObj) {  %>
@@ -98,6 +106,7 @@
                 <% }); %> 
 
             </ol>
+            </div>
           </div>
         </div>
  
