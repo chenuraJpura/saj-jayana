@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+
 // Load User model
 const { forwardAuthenticated, ensureAuthenticated } = require('../controllers/auth');
 const userController=require('../controllers/userController');

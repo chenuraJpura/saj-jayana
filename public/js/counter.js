@@ -16,7 +16,10 @@ window.addEventListener('keydown',(event)=>{
         }
         if(parseInt(counterTag.innerHTML)>=1){
             frontReset.style.display='';
-            saveCount.style.display='';
+            if(saveCount) {
+                saveCount.style.display='';
+            }
+            
         }
     })
 window.addEventListener('keyup',()=>{
@@ -29,7 +32,10 @@ counterTag.addEventListener('click',()=>{
     counterTag.innerHTML=parseInt(counterTag.innerHTML)+1;
     if(parseInt(counterTag.innerHTML)>=1){
         frontReset.style.display='inline'; 
-        saveCount.style.display='inline';    
+        if(saveCount) {
+            saveCount.style.display='inline';    
+        }
+        
     }
 })
 
@@ -37,6 +43,9 @@ counterTag.addEventListener('click',()=>{
 resetTag.addEventListener('click',()=>{
     counterTag.innerHTML="0";
     frontReset.style.display='none';
-    saveCount.style.display='none';
+    if(saveCount) {
+        saveCount.style.display='none';    
+    }
+    
 })
 
