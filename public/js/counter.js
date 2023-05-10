@@ -9,11 +9,16 @@ const resetTag=document.querySelector('.reset');
 //increment value using keyboard press
 
 window.addEventListener('keydown',(event)=>{
-    if(event.keyCode==32){
+        if(event.keyCode==67){
         counterTag.classList.add('pulse1');
         counterTag.innerHTML=parseInt(counterTag.innerHTML)+1;
         
         }
+
+        if(event.keyCode==82){
+            resetTag.click();             
+        }
+
         if(parseInt(counterTag.innerHTML)>=1){
             frontReset.style.display='';
             if(saveCount) {
@@ -24,11 +29,13 @@ window.addEventListener('keydown',(event)=>{
     })
 window.addEventListener('keyup',()=>{
     counterTag.classList.remove('pulse1');
-
 })
 
+
+
 //increment value using mouse press
-counterTag.addEventListener('click',()=>{
+counterTag.addEventListener('mousedown',()=>{
+    counterTag.classList.add('pulse1');
     counterTag.innerHTML=parseInt(counterTag.innerHTML)+1;
     if(parseInt(counterTag.innerHTML)>=1){
         frontReset.style.display='inline'; 
@@ -37,8 +44,14 @@ counterTag.addEventListener('click',()=>{
         }
         
     }
+    
 })
 
+
+counterTag.addEventListener('mouseup',()=>{
+    counterTag.classList.remove('pulse1');
+
+})
 //reset button
 resetTag.addEventListener('click',()=>{
     counterTag.innerHTML="0";
